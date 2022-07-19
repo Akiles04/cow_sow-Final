@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/owner"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Perfil</ion-title>
+    <ion-buttons slot="end" >
+      <ion-button (click)=" cerrarSecion()">
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col>
+      <ion-card *ngFor="let p of perfil">
+        <ion-card-content>
+          <ion-item>
+            <ion-label class="label-seccion">Rut: </ion-label>
+            <ion-label class="label-descripcion"> {{p.RUT}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label class="label-seccion">Nombre: </ion-label>
+            <ion-label class="label-descripcion">{{p.NOMBRE}} </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label class="label-seccion">Fecha Nacimiento: </ion-label>
+            <ion-label class="label-descripcion"> {{p.FECHA_NACIMIENTO}} </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label class="label-seccion">Email: </ion-label>
+            <ion-label class="label-descripcion"> {{p.EMAIL}} </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label class="label-seccion">Tipo Usuario: </ion-label>
+            <ion-label class="label-descripcion"> {{p.TIPO_USUARIO}} </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label class="label-seccion">Dirección: </ion-label>
+            <ion-label class="label-descripcion"> {{p.DIRECCION}} </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label class="label-seccion">Tipo Dirección: </ion-label>
+            <ion-label class="label-descripcion"> {{p.TIPO_DIRECCION}} </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label class="label-seccion">Comuna: </ion-label>
+            <ion-label class="label-descripcion"> {{p.NOMBRE_COMUNA}} </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label class="label-seccion">Región: </ion-label>
+            <ion-label class="label-descripcion"> {{p.NOMBRE_REGION}} </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label class="label-seccion">País: </ion-label>
+            <ion-label class="label-descripcion"> {{p.NOMBRE_PAIS}} </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label class="label-seccion">Descripción: </ion-label>
+            <ion-label class="label-descripcion"> {{p.DESCRIPCION}} </ion-label>
+          </ion-item>
+          <ion-buttons slot="end">
+            <ion-button (click)=" modificarPerfil()">
+              <ion-icon name="trash-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>

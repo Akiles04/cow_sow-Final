@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/property"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Agregar Propiedad</ion-title>
+    <ion-buttons slot="end" >
+      <ion-button (click)=" cerrarSecion()">
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row>
+    <ion-col>
+      <ion-card>
+        <ion-card-content>
+          <ion-item class="input">
+            <ion-input [(ngModel)] = "propiedad.NOMBRE_PROPIEDAD" type="text" placeholder="Ingresar Nombre Propiedad" required></ion-input>
+          </ion-item>
+          <ion-item class="input">
+            <ion-input [(ngModel)] = "propiedad.DIRECCION"  type="text" placeholder="Ingresar Dirección"required></ion-input>
+          </ion-item>
+          <ion-item class="input">
+            <ion-input [(ngModel)] = "propiedad.HECTAREAS" type="number" placeholder="Ingresar Numero Hectareas" required>
+            </ion-input>
+          </ion-item>
+          <ion-item class="input" >
+            <ion-label position="floating">Comuna</ion-label>
+            <ion-select okText="OK" cancelText="Cerrar" [(ngModel)] = "propiedad.ID_COMUNA" >
+              <ion-select-option *ngFor="let c of comuna" >{{c.ID_COMUNA}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-button color="primary" (click)="agregarPropiedad()">
+            Crear Propiedad
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

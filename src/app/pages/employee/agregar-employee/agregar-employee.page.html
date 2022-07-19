@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/employee"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Agregar Empleado</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col>
+      <ion-card>
+        <ion-card-content>
+          <ion-item class="input">
+            <ion-input [(ngModel)] = "usuario.RUT" type="text" placeholder="Ingresar Rut" ></ion-input>
+          </ion-item>
+            <ion-item class="input">
+            <ion-input [(ngModel)] = "usuario.PNOMBRE" type="text" placeholder="Ingresar Primer Nombre"  ></ion-input>
+          </ion-item>
+          <ion-item class="input">
+            <ion-input [(ngModel)] = "usuario.SNOMBRE" type="text" placeholder="Ingresar Segundo Nombre" ></ion-input>
+          </ion-item>
+            <ion-item class="input">
+            <ion-input [(ngModel)] = "usuario.PAPELLIDO" type="text" placeholder="Ingresar Primer Apellido"  ></ion-input>
+          </ion-item>
+          <ion-item class="input">
+          <ion-input [(ngModel)] = "usuario.SAPELLIDO" type="text" placeholder="Ingresar Segundo Apellido" ></ion-input>
+        </ion-item>
+        <ion-item class="input">
+          <ion-input [(ngModel)] = "usuario.ROL_USUARIO" type="text" placeholder="Ingrese Rol Usuario"  ></ion-input>
+        </ion-item>
+
+        <ion-item class="input">
+          <ion-input [(ngModel)] = "usuario.EMAIL" type="email" placeholder="Ingresar Email" ></ion-input>
+        </ion-item>
+          <ion-item class="input">
+          <ion-input [(ngModel)] = "usuario.CLAVE" type="password" placeholder="Ingresar Password"  ></ion-input>
+        </ion-item>
+      <ion-select okText="Listo" cancelText="Cerrar" [(ngModel)] ="usuario.ID_PROPIEDAD" placeholder="Propiedad">
+        <ion-select-option *ngFor="let p of propiedad">{{p.ID_PROPIEDAD}}</ion-select-option>
+      </ion-select>
+        <br>
+        <div>
+          <ion-button color="primary" (click)="agregarEmpleado()">
+            Crear Empleado
+          </ion-button>
+        </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>

@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+    <ion-back-button defaultHref="/property"></ion-back-button>
+  </ion-buttons>
+    <ion-title>Información Propiedad</ion-title>
+    <ion-buttons slot="end" >
+      <ion-button (click)=" cerrarSecion()">
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row>
+    <ion-col>
+      <ion-card *ngFor="let p of infopropiedad">
+        <ion-card-content >
+          <ion-item>
+          <ion-label type="text">Nombre: {{p.NOMBRE_PROPIEDAD}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label type="text">Dirección: {{p.DIRECCION}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label type="text">Cantidad Hectáreas: {{p.HECTAREAS}}</ion-label>
+        </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>

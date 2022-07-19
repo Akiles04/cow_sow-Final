@@ -1,0 +1,57 @@
+<ion-header >
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/owner"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Contacto</ion-title>
+    <ion-buttons slot="end" >
+      <ion-button (click)=" cerrarSecion()">
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content fullscreen class="ion-padding">
+
+
+  <ion-item-sliding *ngFor="let co of Lcontactos">
+    <ion-item [routerLink]="['/contact/'+ co.ID_CONTACTO]"> 
+      <ion-avatar slot="start">
+        <ion-img src="../../../assets/icon/icons/contactos.png"></ion-img>
+      </ion-avatar>
+      <ion-label >
+        {{co.NOMBRE}}
+      </ion-label>
+    </ion-item>
+    <div [routerLink]="['/contact/']">
+    <ion-item-options >
+      <ion-item-option color="secondary" (click)="presentAlert1()" >
+        <ion-icon slot="top" ios="ellipsis-horizontal" md="ellipsis-vertical" ></ion-icon>
+        Modificar
+      </ion-item-option >
+      <ion-item-option color="danger" (click)="deleteContacto(co.ID_CONTACTO)"  >
+        <ion-icon slot="top"  name="trash-outline" ></ion-icon>
+        Borrar
+      </ion-item-option>
+    </ion-item-options>
+  </div>
+  </ion-item-sliding>
+
+
+
+  
+
+  <ion-fab vertical="bottom" horizontal="end" class="createcontact">
+    <ion-fab-button (click)="agregarContacto()">
+      <ion-img src="../../../assets/icon/icons/crearcontactos.png"></ion-img>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-text>Crear Contacto</ion-text>
+  </ion-fab>
+
+</ion-content>
+
+

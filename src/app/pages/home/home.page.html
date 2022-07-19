@@ -1,0 +1,41 @@
+<ion-header >
+  <ion-toolbar color="success">
+    <ion-buttons ></ion-buttons>
+    <ion-title>
+      Bienvenido
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+
+<ion-content fullscreen>
+  <ion-card>
+    <img src="https://st2.depositphotos.com/2435561/5260/i/600/depositphotos_52600881-stock-photo-small-red-stable-and-view.jpg"
+    alt="bienvenido"> 
+    <ion-card-header>
+      <ion-card-title>Sow & Cow</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      ¡Bienvenido!
+      <br>
+      Sow&Cow pretende ser tu libreta digital soñada, para llevar el registro de actividades, 
+      recursos y productividad de tu parcela. Todo lo que necesitas en un solo espacio.
+    </ion-card-content>
+  </ion-card>
+
+
+
+  <ion-grid fixed>
+
+      <ion-col >
+        <ion-button [routerLink]="['/login']" expand="block" color="danger">Iniciar Sesión</ion-button>
+   <ion-button [routerLink]="['/owner']" expand="block" color="primary">Registrarse</ion-button>
+      </ion-col>
+
+  </ion-grid>
+</ion-content>
+
+

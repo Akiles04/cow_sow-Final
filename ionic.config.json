@@ -1,0 +1,8 @@
+{
+  "name": "cow_sow",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

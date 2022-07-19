@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/contact"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Agregar Contacto</ion-title>
+    <ion-buttons slot="end" >
+      <ion-button (click)=" cerrarSecion()">
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col>
+      <ion-card>
+        <ion-card-content>
+          <ion-item class="input">
+            <ion-input [(ngModel)] = "contacto.NOMBRE" type="text"  placeholder="Ingresar Nombre" required></ion-input>
+          </ion-item>
+          <ion-item class="input">
+            <ion-input [(ngModel)] = "contacto.EMAIL" type="email" placeholder="Email -> cow_sow@gmail.com" required></ion-input>
+          </ion-item>
+          <ion-item class="input">
+            <ion-input [(ngModel)] = "contacto.TELEFONO" type="number" placeholder="Telefono sin +56" required></ion-input>
+          </ion-item>
+          <ion-item class="input">
+            <ion-input [(ngModel)] = "contacto.DESCRIPCION" type="text"  placeholder="Ingresar Descripción" ></ion-input>
+          </ion-item>
+          <br>
+          <div>
+          <ion-button color="primary" (click)="agregarContacto()">
+            Guardar Contacto
+          </ion-button>
+        </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>
+
+
